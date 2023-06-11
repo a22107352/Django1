@@ -25,7 +25,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    autor = models.ForeignKey(User, on_delete=models.CASCADE)
+    autor = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
     conteudo = models.TextField()
 
     def __str__(self):

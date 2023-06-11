@@ -1,4 +1,3 @@
-
 {% block content %}
     <h1>Criar Post</h1>
     <form method="post" action="{% url 'criar_post' %}">
@@ -17,9 +16,9 @@
         </select><br>
         <label for="autor">Autor:</label><br>
         <select id="autor" name="autor">
-            {% for user in users %}
-                <option value="{{ user.id }}">{{ user.username }}</option>
-            {% endfor %}
+            <option value="not_anonymous">Not Anonymous</option>
+            <option value="anonymous">Anonymous</option>
+
         </select><br>
         <input type="submit" value="Criar">
     </form>

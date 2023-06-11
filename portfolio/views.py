@@ -2,6 +2,8 @@ from django.shortcuts import render
 from portfolio.extracao_dados import extrai_info_de_url
 import time, threading
 
+from login.models import Projeto, Cadeira
+
 timer = None  # timer
 
 
@@ -15,7 +17,9 @@ def foo():
 
 
 def index(request):
-    return render(request, "index.html")
+    projetos = Projeto.objects.all()
+    cadeiras = Cadeira.objects.all()
+    return render(request, "index.html", {'projetos': projetos, 'cadeiras': cadeiras})
 
 
 def chart_view(request):

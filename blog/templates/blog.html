@@ -2,6 +2,9 @@
 
 {% block content %}
     <h1>Blog</h1>
+   <a class="links" href="{% url 'portfolio:index' %}">Para voltar ao portfolio click aqui</a>
+<br>
+<br>
     <a href="{% url 'criar_post' %}" class="btn btn-primary">Add Post</a>
 
     {% for post in posts %}
